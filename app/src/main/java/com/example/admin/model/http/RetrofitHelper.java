@@ -147,12 +147,12 @@ public class RetrofitHelper {
 
     public RetrofitHelper addQueryParameter() {
         addQueryParameter = true;
-        return retrofitHelper;
+        return this;
     }
 
     public RetrofitHelper addHeader() {
         addHeader = true;
-        return retrofitHelper;
+        return this;
     }
 
     public RetrofitHelper addDownloadInterceptor(ProgressObserver observer) {
@@ -160,6 +160,6 @@ public class RetrofitHelper {
             addDownloadInterceptor = true;
             this.observer = observer;
         }
-        return retrofitHelper;
+        return this;
     }
 }

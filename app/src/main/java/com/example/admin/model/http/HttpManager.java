@@ -139,13 +139,13 @@ public class HttpManager {
     public HttpManager addQueryParameter() {
         RetrofitHelper.getInstance()
                 .addQueryParameter();
-        return httpManager;
+        return this;
     }
 
     public HttpManager addHeader() {
         RetrofitHelper.getInstance()
                 .addHeader();
-        return httpManager;
+        return this;
     }
 
     //添加公共参数,直接在Map里添加，不使用拦截器
@@ -153,6 +153,6 @@ public class HttpManager {
         params.put("deviceType", "android");
         params.put("deviceid", AppUtil.getDeviceId(AppStatus.getInstance()));
         params.put("version", AppUtil.getVersionName(AppStatus.getInstance()));
-        return httpManager;
+        return this;
     }
 }

@@ -1,10 +1,5 @@
 package com.example.admin.utils;
 
-/**
- * User: hqs
- * Date: 2016/4/3
- * Time: 11:46
- */
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

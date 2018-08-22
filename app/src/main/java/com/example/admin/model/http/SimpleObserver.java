@@ -52,10 +52,14 @@ public abstract class SimpleObserver<T> implements Observer<ResponseBody> {
             onError(baseResponse.getMsg());
             return;
         }
+
         if (tClass != null) {
             T t = GsonUtil.getObject(baseResponse.getData(), tClass);
             onSuccess(t);
-        } else {
+            return;
+        }
+
+        if(tClassList != null){
             List<T> list = GsonUtil.getObjects(baseResponse.getData(), tClassList);
             onSuccess(list);
         }
