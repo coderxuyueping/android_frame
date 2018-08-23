@@ -6,5 +6,5 @@ package com.example.admin.model.http;
 
 public class ApiConstant {
     //必须以"/"结尾
-    public static final String BASE_URL = "http://room.9158.com/";
+    public static final String BASE_URL = "http://room.1024.com/";
 }

@@ -39,7 +39,7 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
 
         //解析jsonObject
         HttpManager.getInstance()
-                .executeGet("http://room.9158.com/live/part_list_11.aspx", map)
+                .executeGet("http://room.1024.com/live/part_list_11.aspx", map)
                 .subscribe(new SimpleObserver<RoomList>(RoomList.class, null) {
 
                     @Override
@@ -48,7 +48,7 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
                     }
 
                     @Override
-                    public void onSuccess(RoomList roomList) {
+                    public void onDataSuccess(RoomList roomList) {
                         RoomList roomList1 = roomList;
                     }
 
@@ -61,7 +61,7 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
                 });
 
         //解析jsonArray
-        HttpManager.getInstance().executeGet("http://room.9158.com/live/get_viewinfo_new.aspx")
+        HttpManager.getInstance().executeGet("http://room.1024.com/live/get_viewinfo_new.aspx")
                 .subscribe(new SimpleObserver<Title>(null, Title[].class) {
                     @Override
                     public void onError(String msg) {
@@ -75,7 +75,7 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
                     }
 
                     @Override
-                    public void onSuccess(List<Title> t) {
+                    public void onDataSuccess(List<Title> t) {
                         List<Title> t1 = t;
                     }
                 });
@@ -127,7 +127,7 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
     @Override
     public void download() {
         HttpManager.getInstance()
-                .downLoadFile("http://mobile.9158.com/9158ChatRoom.apk",
+                .downLoadFile("http://mobile.1024.com/1024ChatRoom.apk",
                         FileUtil.getCacheFileByType(AppStatus.getInstance(), "apk_file").getAbsolutePath()
                         , "9158.apk",
                         new ProgressObserver(true) {

@@ -16,7 +16,7 @@ import io.reactivex.disposables.Disposable;
  */
 
 public class Main2Presenter extends RxPresenter<Main2Contract.View> implements Main2Contract.Presenter {
-    private String url = "http://room.9158.com/live/getad.aspx";
+    private String url = "http://room.1024.com/live/getad.aspx";
     private List<AdInfo> list = new ArrayList<>();
     @Override
     public void load() {
@@ -33,8 +33,7 @@ public class Main2Presenter extends RxPresenter<Main2Contract.View> implements M
                     }
 
                     @Override
-                    public void onSuccess(List<AdInfo> t) {
-                        super.onSuccess(t);
+                    public void onDataSuccess(List<AdInfo> t) {
                         list.addAll(t);
                         mView.updateBanner(t);
                     }
